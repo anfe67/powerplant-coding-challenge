@@ -10,7 +10,7 @@ returns a json solution, as in instructions.
 Also exposes an 0.0.0.0:8888/monitor methods=['GET'], which connects to a Flask-Socketio socket and returns a flask 
 template. Every request emitted by a client is then forwarded to all monitoring clients connecting to this page. 
 
-The request connection and event reception are handled in javascript.  
+The request connection and event reception are handled in javascript.
 
 ## Details 
 
@@ -28,9 +28,46 @@ If a solution is not feasible, then {"name": ""SOLUTION Unfeasible"", "reason": 
 powerstations"} is returned. 
 
 
-## To run it: 
-- Clone the github repository: 
-- Create a virtual environment and install the requirements 
+## To run it (tested on a Raspberry Pi 4 running Ubuntu 20.04 and Python 3.8.5): 
+- Clone the github repository:
+```
+git clone https://github.com/anfe67/powerplant-coding-challenge.git
+```
+- Create and activate a virtual environment and install the requirements (make sure python3-venv is installed)
+```
+cd powerplant-coding-challenge/
+python3 -m venv venv
+```
+- Install the requirements> 
+```
+pip install -r requirements.txt
+```
+- I had an issue with json2html, I had to run separately 
+```
+pip install json2html
+```
+
+- unit tests (4 example payloads are used, the three provided and 1 unfeasible) can be run : 
+```
+python3 -m unittest test/test_logic.py
+```
+
 - just run python challenge_server.py
-- unit tests can be run :   
-- stimulate the server by posting a json payload at address 127.0.0.1:888/productionplan 
+```
+python challenge_server.py
+```
+- Point your browser to the monitoring page: http://127.0.0.1:8888/monitor 
+
+
+- stimulate the server by posting a json payload at address 127.0.0.1:888/productionplan, using either postman or RESTER
+from Chrome or other tools, observe the solutions populate the web page.
+This image is a screenshot obtained on the Raspberry Pi. 
+Sometimes a picture is worth 1000 words! [example_usage_rpi4.png]
+ 
+
+
+
+
+
+
+
