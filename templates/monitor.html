@@ -1,0 +1,32 @@
+<!DOCTYPE html> 
+<html>
+<head>
+  <link rel="shortcut icon" href="{{ url_for('static', filename='images/favicon.ico') }}">
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css"
+      integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/socket.io/3.1.0/socket.io.min.js"></script>
+  <script src="{{ url_for('static', filename='js/socket-functions.js') }} "></script>
+<title> Engie Powerplant allocation Coding Challenge </title>
+</head>
+<body>
+<div class="container">
+  <div class="row" >
+    <div class="col" id="ppTitle">
+      <h1>  Waiting for connections...  </h1>
+    </div>
+  </div>
+
+  <div class="row" >
+    <div class="col" id="requests">
+      <p>Allocation requests: </p>
+      <div id="allocationRequests">
+
+      </div>
+    </div>
+  </div>
+
+</div>
+
+</body>
+</html>
