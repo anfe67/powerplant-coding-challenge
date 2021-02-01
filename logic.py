@@ -144,12 +144,12 @@ class PayLoad:
 
         if self.load > max_load:
             self.feasible = False
-            self.unfeasible_reason = f"Requested load {self.load} too high for our powerstations "
+            self.unfeasible_reason = f"Requested load {self.load/10} too high for our powerstations "
             return False
 
         if self.load < min_load:
             self.feasible = False
-            self.unfeasible_reason = f"Requested load {self.load} too low for our powerstations "
+            self.unfeasible_reason = f"Requested load {self.load/10} too low for our powerstations "
             return False
 
         return True
