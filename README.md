@@ -41,6 +41,7 @@ git clone https://github.com/anfe67/powerplant-coding-challenge.git
 ```
 cd powerplant-coding-challenge/
 python3 -m venv venv
+source venv/bin/activate
 ```
 - Install the requirements> 
 ```
